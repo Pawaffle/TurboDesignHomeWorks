@@ -6,6 +6,7 @@ public abstract class Map {
     int size;
     Tile[][] map;
 
+    // My alternative for the createMap() function
     public Map(int mapSize) {
         this.size = mapSize;
         this.map = new Tile[mapSize][mapSize];
@@ -31,6 +32,7 @@ public abstract class Map {
         }
     };
 
+    // displays map with user position on it
     public void display(int x, int y){
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
@@ -44,6 +46,7 @@ public abstract class Map {
         }
     };
 
+    // returns (tile) element to perform related actions
     public Tile getElement(int x, int y){
         return this.map[x][y];
     }

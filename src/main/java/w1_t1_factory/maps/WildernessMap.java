@@ -6,6 +6,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class WildernessMap extends Map{
 
+    // interesting example of GPT version for blazingly fast performance :D
+
     private static final Tile[] TILE_TYPES = {
             new Swamp(),
             new Water(),

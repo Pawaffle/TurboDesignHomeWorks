@@ -21,10 +21,20 @@ public class Game {
         int mapSize = scanner.nextInt();
 
         Map myMap = switch (mapChoice) {
+
+            // I went without createMap() inside the Game class because:
+            // We use Map as Abstract - so we can use constructor for that
+
             case 1 -> new CityMap(mapSize);
             default -> new WildernessMap(mapSize);
         };
 
+        // INSTRUCTION
+        // The idea is that game controlled by num pad
+        // where 8,4,2,6 is directions
+        // 0 for exit and 5 for action activation
+        //
+        // unfortunately it necessary to use enter to confirm user input
 
         int x = 0;
         int y = 0;
