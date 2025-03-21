@@ -6,4 +6,6 @@ public interface Tile {
 
     // that returns the tile type as a string (e.g. "swamp", "water", "road", "forest", "building")
     public String getType();
+
+    public void action();
 }

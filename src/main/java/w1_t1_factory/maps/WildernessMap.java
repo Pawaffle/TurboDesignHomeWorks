@@ -1,19 +1,20 @@
 package w1_t1_factory.maps;
 
-import w1_t1_factory.tiles.Building;
-import w1_t1_factory.tiles.Forest;
-import w1_t1_factory.tiles.Road;
-import w1_t1_factory.tiles.Tile;
+import w1_t1_factory.tiles.*;
 
 import java.util.concurrent.ThreadLocalRandom;
 
 public class WildernessMap extends Map{
 
     private static final Tile[] TILE_TYPES = {
-            new Building(),
-            new Road(),
+            new Swamp(),
+            new Water(),
             new Forest()
     };
+
+    public WildernessMap(int mapSize) {
+        super(mapSize);
+    }
 
     @Override
     public Tile createTile() {

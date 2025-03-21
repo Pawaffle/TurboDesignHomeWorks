@@ -9,4 +9,8 @@ public class Swamp implements Tile {
     public String getType(){
         return "swamp";
     };
+
+    public void action(){
+        System.out.println("drowning action");
+    };
 }

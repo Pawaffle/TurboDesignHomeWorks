@@ -9,6 +9,10 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class CityMap extends Map {
 
+    public CityMap(int mapSize) {
+        super(mapSize);
+    }
+
     @Override
     public Tile createTile(){
         return switch (ThreadLocalRandom.current().nextInt(3)) {

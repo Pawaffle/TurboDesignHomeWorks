@@ -9,4 +9,8 @@ public class Forest implements Tile {
     public String getType(){
         return "forest";
     };
+
+    public void action(){
+        System.out.println("action in forest");
+    };
 }

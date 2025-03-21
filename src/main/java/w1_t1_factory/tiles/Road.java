@@ -9,4 +9,8 @@ public class Road implements Tile {
     public String getType(){
         return "road";
     };
+
+    public void action(){
+        System.out.println("rolling action");
+    };
 }

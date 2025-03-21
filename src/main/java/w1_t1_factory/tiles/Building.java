@@ -9,4 +9,8 @@ public class Building implements Tile {
     public String getType(){
         return "building";
     };
+
+    public void action(){
+        System.out.println("building action");
+    };
 }

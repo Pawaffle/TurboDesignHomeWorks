@@ -9,4 +9,8 @@ public class Water implements Tile {
     public String getType(){
         return "water";
     };
+
+    public void action(){
+        System.out.println("swimming action");
+    };
 }

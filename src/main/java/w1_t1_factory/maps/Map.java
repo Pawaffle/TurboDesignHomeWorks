@@ -35,7 +35,7 @@ public abstract class Map {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 if (x == i && y == j) {
-                    System.out.println("\uD83D\uDE04");
+                    System.out.print("\uD83D\uDE04");
                 } else {
                     System.out.print(map[i][j].getCharacter() + " ");
                 }
@@ -43,5 +43,9 @@ public abstract class Map {
             System.out.println();
         }
     };
+
+    public Tile getElement(int x, int y){
+        return this.map[x][y];
+    }
 }
 
