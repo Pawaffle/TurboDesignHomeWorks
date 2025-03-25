@@ -4,14 +4,12 @@ import w1_t2_ASCII.objects.styleA.ButtonA;
 import w1_t2_ASCII.objects.styleA.CheckboxA;
 import w1_t2_ASCII.objects.styleA.TextFieldA;
 
-public class AFactory {
-    UIFactory styleAFactory = new GenericFactory(
+public class AFactory extends GenericFactory {
+    public AFactory(){
+        super(
             ButtonA::new,
             CheckboxA::new,
             TextFieldA::new
-    );
-
-    public UIFactory Create() {
-        return styleAFactory;
+        );
     }
 }

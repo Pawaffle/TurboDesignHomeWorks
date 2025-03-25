@@ -1,10 +1,12 @@
 package w1_t2_ASCII.objects.styleB;
 
+import w1_t2_ASCII.objects.abstractt.Style;
 import w1_t2_ASCII.objects.abstractt.TextField;
 
-public class TextFieldB extends TextField implements StyleB {
+public class TextFieldB extends TextField{
 
     public TextFieldB(int width) {
-        super(width);
+        Style myStyle = new StyleB();
+        super(width, myStyle);
     }
 }

@@ -7,7 +7,7 @@ import w1_t2_ASCII.objects.abstractt.TextField;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class GenericFactory implements UIFactory {
+public abstract class GenericFactory{
 
 
     // mapping Function - map x to y - lambda based interface
@@ -27,17 +27,14 @@ public class GenericFactory implements UIFactory {
         this.textFieldCreator = textFieldCreator;
     }
 
-    @Override
     public Button createButton(String text) {
         return buttonCreator.apply(text);
     }
 
-    @Override
     public Checkbox createCheckbox() {
         return checkboxCreator.get();
     }
 
-    @Override
     public TextField createTextField(int width) {
         return textFieldCreator.apply(width);
     }
