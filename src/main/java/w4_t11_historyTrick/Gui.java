@@ -46,7 +46,9 @@ public class Gui extends Application {
         hBox.setMargin(colorBox3.getRectangle(), insets);
 
 
-        Label label = new Label("Press Ctrl-Z to undo the last change.");
+        Label label = new Label(
+            "Press Ctrl+Z to undo the last change.\n"
+            + "Press Ctrl+Y to redo the last change.");
         label.setPadding(insets);
 
         // create a VBox that contains the HBox and the CheckBox
