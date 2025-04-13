@@ -17,4 +17,9 @@ public class Memento implements IMemento {
     public boolean isSelected() {
         return isSelected;
     }
+
+    @Override
+    public String toString() {
+        return ("options: " + options[0] + " " + options[1] + " " + options[2]);
+    }
 }

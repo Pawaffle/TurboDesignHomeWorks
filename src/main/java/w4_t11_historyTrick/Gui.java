@@ -21,6 +21,7 @@ public class Gui extends Application {
 
     public void start(Stage stage) {
 
+        // Controller
         controller = new Controller(this);
 
         // Insets for margin and padding
@@ -34,6 +35,7 @@ public class Gui extends Application {
         // Create a CheckBox
         checkBox = new CheckBox("Click me!");
         checkBox.setPadding(insets);
+
 
         // Add the ColorBoxes and CheckBox to a HBox
         HBox hBox = new HBox(colorBox1.getRectangle(), colorBox2.getRectangle(), colorBox3.getRectangle());
@@ -61,6 +63,11 @@ public class Gui extends Application {
                 // Ctrl-Z: undo
                 System.out.println("Undo key combination pressed");
                 controller.undo();
+            }
+            if (event.isControlDown() && event.getCode() == KeyCode.Y) {
+                // Ctrl-Y: redo
+                System.out.println("Redo key combination pressed");
+                controller.redo();
             }
         });
 
