@@ -48,7 +48,8 @@ public class Gui extends Application {
 
         Label label = new Label(
             "Press Ctrl+Z to undo the last change.\n"
-            + "Press Ctrl+Y to redo the last change.");
+            + "Press Ctrl+Y to redo the last change.\n"
+            + "Press Ctrl+H to open history window.\n");
         label.setPadding(insets);
 
         // create a VBox that contains the HBox and the CheckBox
@@ -65,11 +66,13 @@ public class Gui extends Application {
                 // Ctrl-Z: undo
                 System.out.println("Undo key combination pressed");
                 controller.undo();
-            }
-            if (event.isControlDown() && event.getCode() == KeyCode.Y) {
+            } else if (event.isControlDown() && event.getCode() == KeyCode.Y) {
                 // Ctrl-Y: redo
                 System.out.println("Redo key combination pressed");
                 controller.redo();
+            } else if (event.isControlDown() && event.getCode() == KeyCode.H) {
+                System.out.println("History window key combination pressed");
+                controller.showHistoryWindow();
             }
         });
 
