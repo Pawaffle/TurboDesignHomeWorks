@@ -19,6 +19,11 @@ public class Memento implements IMemento {
     }
 
     @Override
+    public Memento copy() {
+        return new Memento(this.options, this.isSelected);
+    }
+
+    @Override
     public String toString() {
         return ("options: " + options[0] + " " + options[1] + " " + options[2]);
     }

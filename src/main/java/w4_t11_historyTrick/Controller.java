@@ -7,13 +7,13 @@ public class  Controller {
     private Model model;
     private Gui gui;
     private List<IMemento> history; // Memento history
-    private List<IMemento> futureHistory;
+    private int position;
 
     public Controller(Gui gui) {
         this.model = new Model();
         this.gui = gui;
         this.history = new ArrayList<>();
-        this.futureHistory = new ArrayList<>();
+        this.position = -1;
         saveToHistory();
     }
 
@@ -36,34 +36,38 @@ public class  Controller {
     }
 
     public void undo() {
-        if (history.size() > 1) {
-            IMemento currentState = history.remove(history.size() - 1);
-            futureHistory.add(currentState);
-            IMemento previousState = history.remove(history.size() - 1);
-            model.restoreState(previousState);
-            saveToHistory();
-            gui.updateGui();
-            System.out.println(history);
-
+        if (position > 0) {
+            System.out.println("Past memento found in history");
+            position --;
+            evaluatePosition();
         }
     }
 
     public void redo() {
-        if (!futureHistory.isEmpty()) {
+        if (position < history.size() - 1) {
             System.out.println("Future memento found in history");
-            IMemento someState = futureHistory.remove(futureHistory.size() - 1);
-            history.add(someState);
-            model.restoreState(someState);
-            gui.updateGui();
+            position ++;
+            evaluatePosition();
         }
     }
 
+    public void evaluatePosition() {
+        IMemento historyRef = history.get(position);
+        model.restoreState(historyRef.copy());
+        gui.updateGui();
+    }
+
     private void saveToHistory() {
-        if (!futureHistory.isEmpty()) {
-            futureHistory = new ArrayList<>();
+        if (position < history.size() - 1) {
+            history = new ArrayList<>(history.subList(0, position + 1));
         }
+        position ++;
         IMemento currentState = model.createMemento();
         history.add(currentState);
         System.out.println(history);
+        System.out.println(position);
     }
 }
+
+// Why get - have references ?
+// Why we need to use IMemento ?
