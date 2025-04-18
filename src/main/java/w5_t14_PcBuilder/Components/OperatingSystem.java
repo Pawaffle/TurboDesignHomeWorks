@@ -1,4 +1,4 @@
-package w5_t12_PcBuilder.Components;
+package w5_t14_PcBuilder.Components;
 
 public class OperatingSystem extends PcComponent {
   private final String version;

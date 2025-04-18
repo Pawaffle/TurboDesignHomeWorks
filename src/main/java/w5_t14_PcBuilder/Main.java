@@ -1,8 +1,8 @@
-package w5_t12_PcBuilder;
+package w5_t14_PcBuilder;
 
-import w5_t12_PcBuilder.ConcreteBuilders.EnthusiastComputerBuilder;
-import w5_t12_PcBuilder.ConcreteBuilders.GamingComputerBuilder;
-import w5_t12_PcBuilder.ConcreteBuilders.OfficeComputerBuilder;
+import w5_t14_PcBuilder.ConcreteBuilders.EnthusiastComputerBuilder;
+import w5_t14_PcBuilder.ConcreteBuilders.GamingComputerBuilder;
+import w5_t14_PcBuilder.ConcreteBuilders.OfficeComputerBuilder;
 
 public class Main {
   public static void main(String[] args) {

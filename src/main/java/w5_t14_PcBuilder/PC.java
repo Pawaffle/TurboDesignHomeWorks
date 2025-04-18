@@ -1,6 +1,6 @@
-package w5_t12_PcBuilder;
+package w5_t14_PcBuilder;
 
-import w5_t12_PcBuilder.Components.PcComponent;
+import w5_t14_PcBuilder.Components.PcComponent;
 
 import java.util.ArrayList;
 import java.util.List;

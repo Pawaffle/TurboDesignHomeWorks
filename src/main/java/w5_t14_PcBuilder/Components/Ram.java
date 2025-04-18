@@ -1,4 +1,4 @@
-package w5_t12_PcBuilder.Components;
+package w5_t14_PcBuilder.Components;
 
 public class Ram extends PcComponent {
   private final int capacityGB; // e.g., 16

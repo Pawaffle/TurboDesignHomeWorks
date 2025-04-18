@@ -1,7 +1,7 @@
-package w5_t12_PcBuilder.ConcreteBuilders;
+package w5_t14_PcBuilder.ConcreteBuilders;
 
-import w5_t12_PcBuilder.*;
-import w5_t12_PcBuilder.Components.*;
+import w5_t14_PcBuilder.*;
+import w5_t14_PcBuilder.Components.*;
 
 public class GamingComputerBuilder implements PcBuilder {
 
