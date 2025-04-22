@@ -1,13 +1,13 @@
 package w5_t12_proxyProtection;
 
 public class User {
-  String username;
+  private String username;
 
   public User(String username) {
     this.username = username;
   }
 
-  void getDocumentInformation() {
-    DocumentProxy.getContent(this.username);
+  public String getUsername() {
+    return username;
   }
 }

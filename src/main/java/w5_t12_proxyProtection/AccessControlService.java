@@ -1,12 +1,14 @@
 package w5_t12_proxyProtection;
 
-public class AccessControlService {
+import java.util.HashSet;
+import java.util.Set;
 
+public class AccessControlService {
   private static volatile AccessControlService instance = null;
-  hashMap<username, documentID>; // might be something not hashMap
+  private Set<String> accessList;
 
   private AccessControlService() {
-      // nothing here
+    accessList = new HashSet<>();
   }
 
   public static AccessControlService getInstance() {
@@ -20,9 +22,11 @@ public class AccessControlService {
     return instance;
   }
 
-  boolean isAllowed(int documentID, String username) {
-    // some checks here
+  public void grantAccess(String username, int documentId) {
+    accessList.add(username + "#" + documentId);
+  }
 
-    return false;
+  public boolean isAllowed(int documentId, String username) {
+    return accessList.contains(username + "#" + documentId);
   }
 }

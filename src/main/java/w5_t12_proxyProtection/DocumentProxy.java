@@ -1,30 +1,34 @@
 package w5_t12_proxyProtection;
 
-import java.nio.file.AccessDeniedException;
+import java.util.Date;
 
-public class DocumentProxy implements DocumentInterface{
+public class DocumentProxy implements DocumentInterface {
+  private Document realDocument;
 
-  // the only fucker that can access the documentation
-  // checks the user rights from the AccessControlService
+  public DocumentProxy(Document realDocument) {
+    this.realDocument = realDocument;
+  }
 
+  @Override
+  public int getId() {
+    return realDocument.getId();
+  }
 
-  String getContent(){
-    try(checkUserRights()){
+  @Override
+  public Date getCreationDate() {
+    return realDocument.getCreationDate();
+  }
 
-      return null
-
-    } throw(AccessDeniedException) {
-
+  @Override
+  public String getContent(User user) throws AccessDeniedException {
+    if (checkUserRights(user)) {
+      return realDocument.getContent(user);
+    } else {
+      throw new AccessDeniedException("Access denied for user: " + user.getUsername());
     }
   }
 
-  boolean checkUserRights(){
-    // call for the AccessControlService
-    return false;
+  private boolean checkUserRights(User user) {
+    return AccessControlService.getInstance().isAllowed(realDocument.getId(), user.getUsername());
   }
-
-  date getCreationDate(){
-    return null; // returns date
-  }
-
 }
