@@ -1,4 +1,4 @@
-package w6_t16_guruTvBridge;
+package w6_t16_guruTvBridge.devises;
 
 public class Radio implements Device {
   private boolean on = false;

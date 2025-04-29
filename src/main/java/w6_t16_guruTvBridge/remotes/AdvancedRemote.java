@@ -1,4 +1,6 @@
-package w6_t16_guruTvBridge;
+package w6_t16_guruTvBridge.remotes;
+
+import w6_t16_guruTvBridge.devises.Device;
 
 public class AdvancedRemote extends BasicRemote {
 

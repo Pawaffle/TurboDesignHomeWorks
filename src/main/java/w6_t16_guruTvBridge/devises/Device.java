@@ -1,4 +1,4 @@
-package w6_t16_guruTvBridge;
+package w6_t16_guruTvBridge.devises;
 
 public interface Device {
   boolean isEnabled();
