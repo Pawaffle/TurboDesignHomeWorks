@@ -5,8 +5,8 @@ public class Main {
     NewDateInterface date = new CalendarToNewDateAdapter();
 
     date.setYear(2025);
-    date.setMonth(4);
-    date.setDay(24);
+    date.setMonth(12);
+    date.setDay(30);
 
     System.out.println("Initial date: " + date.getDay() + "/" + date.getMonth() + "/" + date.getYear());
 
